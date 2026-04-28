@@ -33,7 +33,7 @@ embedded-linux-monitor/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/embedded-linux-monitor.git
+git clone https://github.com/mounika-dev-code/embedded-linux-monitor.git
 cd embedded-linux-monitor
 Ensure Python 3.8+ is installed (or your target version).
 
