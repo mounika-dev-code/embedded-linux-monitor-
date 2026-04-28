@@ -1,3 +1,24 @@
+from fastapi import FastAPI, HTTPException
+from services.metrics_service import get_metrics
+
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"message": "FastAPI server is running!"}
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+@app.get("/metrics")
+def metrics():
+    try:
+        return get_metrics()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+"""
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 import subprocess
@@ -44,8 +65,9 @@ def metrics():
         )
 
     except json.JSONDecodeError:
-        # Invalid JSON output
+        # Invalid JSON output */
         return JSONResponse(
             status_code=500,
             content={"error": "Invalid JSON output from agent", "raw_output": result_str}
         )
+"""
