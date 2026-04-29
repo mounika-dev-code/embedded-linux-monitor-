@@ -5,7 +5,7 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 from fastapi import FastAPI, HTTPException
-from services.metrics_service import get_metrics
+from Services.metrics_service import get_metrics
 
 app = FastAPI()
 
